@@ -3193,6 +3193,8 @@ MonoBehaviour:
   player: {fileID: 1970245091893131123}
   dangers_platforms:
   - {fileID: 8811592454636822419, guid: 37a970b50c745c740afd31e5349dc9ff, type: 3}
+  - {fileID: 8811592454636822419, guid: 502bac57e53005547828c8f088503697, type: 3}
+  - {fileID: 8811592454636822419, guid: f81e98b5caeca5241949e459c7de6ce9, type: 3}
   current_dangers: []
   helper_transforms: []
   platform_1: {fileID: 2058948629}
