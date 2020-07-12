@@ -27,7 +27,7 @@ TextureImporter:
       213: 1057397038539559032
     second: personaje@2x_7
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -81,8 +81,9 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,7 +94,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -104,6 +106,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -111,12 +114,12 @@ TextureImporter:
       name: personaje@2x_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 573
-        width: 341
-        height: 485
+        x: 28
+        y: 568
+        width: 358
+        height: 502
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,12 +135,12 @@ TextureImporter:
       name: personaje@2x_1
       rect:
         serializedVersion: 2
-        x: 439
-        y: 575
-        width: 276
-        height: 463
+        x: 443
+        y: 560
+        width: 295
+        height: 474
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +156,12 @@ TextureImporter:
       name: personaje@2x_2
       rect:
         serializedVersion: 2
-        x: 833
-        y: 573
-        width: 277
-        height: 510
+        x: 788
+        y: 581
+        width: 331
+        height: 490
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,12 +177,12 @@ TextureImporter:
       name: personaje@2x_3
       rect:
         serializedVersion: 2
-        x: 1196
-        y: 602
-        width: 324
-        height: 490
+        x: 1192
+        y: 611
+        width: 305
+        height: 468
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,11 +199,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 0
-        width: 311
-        height: 488
+        y: 12
+        width: 396
+        height: 499
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +219,12 @@ TextureImporter:
       name: personaje@2x_5
       rect:
         serializedVersion: 2
-        x: 493
-        y: 33
-        width: 342
-        height: 452
+        x: 491
+        y: 51
+        width: 369
+        height: 472
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,12 +240,12 @@ TextureImporter:
       name: personaje@2x_6
       rect:
         serializedVersion: 2
-        x: 935
-        y: 13
-        width: 296
-        height: 472
+        x: 888
+        y: 26
+        width: 347
+        height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -258,12 +261,12 @@ TextureImporter:
       name: personaje@2x_7
       rect:
         serializedVersion: 2
-        x: 1296
-        y: 53
-        width: 377
-        height: 432
+        x: 1276
+        y: 70
+        width: 395
+        height: 461
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
