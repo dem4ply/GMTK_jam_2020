@@ -35,7 +35,8 @@ namespace platformer.controller.player
 
 
 		public int _score = 0;
-		public TMPro.TextMeshProUGUI score;
+		public UnityEngine.UI.Text score;
+		public UnityEngine.UI.Text dead_score;
 
 
 		public int current_platform = 0;
@@ -81,7 +82,8 @@ namespace platformer.controller.player
 			platform_1.GetComponent< Platform_controller >().seek( helper_1, fear_1 );
 			platform_2.GetComponent< Platform_controller >().seek( helper_2, fear_2 );
 			_score++;
-			score.text = _score.ToString();
+			score.text = string.Format( "Score: {0}", _score.ToString() );
+			dead_score.text = string.Format( "Score: {0}", _score.ToString() );
 			switch( current_platform )
 			{
 				case 0:
