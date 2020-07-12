@@ -8,7 +8,7 @@ namespace platformer.controller.player
 	public class Platformer_player_controller : chibi.controller.Controller
 	{
 		public Controller_npc player;
-		public Spawn_platform_radial platform_blender;
+		public Spawn_platform_lateral platform_blender;
 		public chibi.pomodoro.Pomodoro_obj jump_buffer_time =
 			new chibi.pomodoro.Pomodoro_obj( 0.25f );
 
@@ -138,13 +138,34 @@ namespace platformer.controller.player
 						action( name, e, true );
 					break;
 				case "p1__bumper__left":
+					switch ( e )
+					{
+						case chibi.joystick.events.down:
+							platform_blender.spawn( 1 );
+							break;
+					}
+					break;
 				case "p1__bumper__right":
+					switch ( e )
+					{
+						case chibi.joystick.events.down:
+							platform_blender.spawn( 2 );
+							break;
+					}
+					break;
 				case "p1__trigger__left":
+					switch ( e )
+					{
+						case chibi.joystick.events.down:
+							platform_blender.spawn( 4 );
+							break;
+					}
+					break;
 				case "p1__trigger__right":
 					switch ( e )
 					{
 						case chibi.joystick.events.down:
-							platform_blender.spawn( 0 );
+							platform_blender.spawn( 3 );
 							break;
 					}
 					break;
