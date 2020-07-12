@@ -6,6 +6,8 @@ namespace platformer.controller.platform
 {
 	public class Spawn_platform_lateral : chibi.controller.Controller
 	{
+		public Controller_npc player;
+		public Rigidbody npc_rigidbody;
 		public Transform platform_1_position;
 		public GameObject platform_1_prefab;
 		public Transform platform_2_position;
@@ -20,10 +22,30 @@ namespace platformer.controller.platform
 			switch ( index )
 			{
 				case 1:
-					spawn( platform_1_position.position, platform_1_prefab, Quaternion.identity );
+					if ( is_falling() )
+					{
+						var mag = Mathf.Min( platform_1_position.localPosition.magnitude, 2f );
+						var vector = npc_rigidbody.velocity.normalized * mag;
+						vector = transform.TransformPoint( vector );
+						spawn( vector, platform_1_prefab, Quaternion.identity );
+					}
+					else
+					{
+						spawn( platform_1_position.position, platform_1_prefab, Quaternion.identity );
+					}
 					break;
 				case 2:
-					spawn( platform_2_position.position, platform_2_prefab, Quaternion.identity );
+					if ( is_falling() )
+					{
+						var mag = Mathf.Min( platform_2_position.localPosition.magnitude, 2f );
+						var vector = npc_rigidbody.velocity.normalized * mag;
+						vector = transform.TransformPoint( vector );
+						spawn( vector, platform_1_prefab, Quaternion.identity );
+					}
+					else
+					{
+						spawn( platform_2_position.position, platform_1_prefab, Quaternion.identity );
+					}
 					break;
 				case 3:
 					spawn( platform_3_position.position, platform_3_prefab, Quaternion.identity );
@@ -34,9 +56,21 @@ namespace platformer.controller.platform
 			}
 		}
 
+		public bool is_falling()
+		{
+			return npc_rigidbody.velocity.y < -0.5f;
+		}
+
+		public Vector3 get_falling_vector()
+		{
+			return npc_rigidbody.velocity;
+		}
+
 		public void spawn( Vector3 position, GameObject obj, Quaternion rotation )
 		{
-			helper.instantiate._( obj, position );
+			var g = helper.instantiate._( obj, position );
+			var p = g.GetComponent<platformer.controller.player.Destroy_on_player_exit>();
+			p.player = player;
 		}
 	}
 }

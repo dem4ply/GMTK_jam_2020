@@ -22,6 +22,23 @@ MonoBehaviour:
   velocity_acceleration: {x: 0, y: 0, z: 0}
   manager_collision: {fileID: 0}
   life_span: 10
+--- !u!114 &5548556218635525852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811592454636822419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d01f963f253864ba718dea65dfaf9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug_mode: 0
+  pool: {fileID: 0}
+  is_block: 0
+  motor: {fileID: 0}
+  pasive_motor: 0
 --- !u!114 &6943368799820659771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,23 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug_mode: 0
   pool: {fileID: 0}
---- !u!114 &8570076321384501732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811592454636822419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d72611ad04f4e2469dc591fde201e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug_mode: 0
-  pool: {fileID: 0}
-  is_block: 0
-  motor: {fileID: 3580784587002654877}
-  controller: {fileID: 5548556218635525852}
 --- !u!114 &7704404186003181809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   controller: {fileID: 5548556218635525852}
   behaviors: []
   start_speed: -1
---- !u!114 &5548556218635525852
+--- !u!114 &8570076321384501732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,14 +80,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8811592454636822419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d01f963f253864ba718dea65dfaf9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d72611ad04f4e2469dc591fde201e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debug_mode: 0
   pool: {fileID: 0}
   is_block: 0
-  motor: {fileID: 0}
-  pasive_motor: 0
+  motor: {fileID: 3580784587002654877}
+  controller: {fileID: 5548556218635525852}
 --- !u!1 &7088319704131258221
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: danger_platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062973146242012213, guid: cc759196f8f8d1d489cfcb3cb0da3856,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8062973146242012215, guid: cc759196f8f8d1d489cfcb3cb0da3856,
         type: 3}

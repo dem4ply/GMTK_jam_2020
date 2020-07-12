@@ -53,14 +53,14 @@ namespace platformer.controller.wagon
 		{
 			var target = next_target;
 			debug.log( target );
-			controller.seek( target );
+			controller.seek( target, null );
 		}
 
 		public void move_prev_step()
 		{
 			var target = prev_target;
 			debug.log( target );
-			controller.seek( target );
+			controller.seek( target, null );
 		}
 
 		protected override void _init_cache()

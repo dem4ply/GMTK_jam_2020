@@ -25,6 +25,7 @@ namespace chibi.controller.steering.behavior
 				foreach ( var hit in properties.radar.hits )
 				{
 					var item_behavior = hit.transform.GetComponent<chibi.inventory.Item>();
+					Debug.Log( item_behavior, item_behavior );
 					if ( item_behavior.item == item )
 					{
 						var fear_vector = flee( controller, hit.transform.position );

@@ -2,6 +2,7 @@ using UnityEngine;
 using chibi.controller.npc;
 using System.Collections.Generic;
 using platformer.controller.platform;
+using UnityEngine.SceneManagement;
 
 namespace platformer.controller.player
 {
@@ -19,9 +20,23 @@ namespace platformer.controller.player
 
 		public Camera main_camera;
 
+		public chibi.controller.steering.behavior.Fear_item fear;
+		public chibi.controller.steering.behavior.Fear_item fear_1;
+		public chibi.controller.steering.behavior.Fear_item fear_2;
+
 		public float radius_outside_platforms = 4;
 		public float vertical_offset_random = 4;
 		public float horizontal_offset_random = 4;
+
+		public Transform helper_1, helper_2;
+
+		public GameObject tuto_canvas;
+		public GameObject lose_screen;
+
+
+		public int _score = 0;
+		public TMPro.TextMeshProUGUI score;
+
 
 		public int current_platform = 0;
 
@@ -50,20 +65,37 @@ namespace platformer.controller.player
 			target_platform_2.player = player;
 			target_platform_2.act = false;
 			target_platform_2.manager = this;
+			current_dangers.Clear();
+			helper_transforms.Clear();
+
+			helper_1 = new GameObject( "helper 1" ).transform;
+			helper_2 = new GameObject( "helper 2" ).transform;
+
+			helper_1.position = target_platform_1.transform.position;
+			helper_2.position = target_platform_2.transform.position;
 		}
 
 		public void set_next_level()
 		{
+			finish_tuto();
+			platform_1.GetComponent< Platform_controller >().seek( helper_1, fear_1 );
+			platform_2.GetComponent< Platform_controller >().seek( helper_2, fear_2 );
+			_score++;
+			score.text = _score.ToString();
 			switch( current_platform )
 			{
 				case 0:
 					target_platform_1.act = false;
 					target_platform_2.act = true;
+					helper_2.position = new_position();
+					helper_1.position = target_platform_1.transform.position;
 					current_platform = 1;
 					break;
 				case 1:
 					target_platform_1.act = true;
 					target_platform_2.act = false;
+					helper_1.position = new_position();
+					helper_2.position = target_platform_2.transform.position;
 					current_platform = 0;
 					break;
 			}
@@ -76,16 +108,17 @@ namespace platformer.controller.player
 			var new_platform = helper.instantiate._( dangers_platforms[ index ], new_position() );
 			var danger = new_platform.GetComponentInChildren<Danger_platform>();
 			danger.player = player;
+			danger.manager = this;
 			current_dangers.Add( new_platform );
 			var temp = new GameObject( "helper_transform" );
 			helper_transforms.Add( temp.transform );
-			for ( int i = 0; i <= current_dangers.Count; ++i  )
+			for ( int i = 0; i < current_dangers.Count; ++i  )
 			{
 				var platform = current_dangers[ i ];
 				var controller = platform.GetComponent< Platform_controller >();
 				var trans = helper_transforms[ i ];
 				trans.position = new_position();
-				controller.seek( trans );
+				controller.seek( trans, fear );
 			}
 		}
 
@@ -113,7 +146,7 @@ namespace platformer.controller.player
 
 		public bool vector_near_to_platforms( Vector3 v )
 		{
-			return Vector3.Distance( v, platform_1.transform.position ) <= radius_outside_platforms || Vector3.Distance( v, platform_2.transform.position ) <= radius_outside_platforms;
+			return Vector3.Distance( v, helper_1.position ) <= radius_outside_platforms || Vector3.Distance( v, helper_2.position ) <= radius_outside_platforms;
 		}
 
 		private void OnTriggerEnter( Collider other )
@@ -123,6 +156,22 @@ namespace platformer.controller.player
 			{
 				debug.log( "target reach" );
 			}
+		}
+
+		public void set_lose()
+		{
+			lose_screen.SetActive( true );
+			player.died();
+		}
+
+		public void retry()
+		{
+			SceneManager.LoadScene( 0 );
+		}
+
+		public void finish_tuto()
+		{
+			tuto_canvas.SetActive( false );
 		}
 	}
 }

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c00b8289179716a469b3f048a2811f3e, type: 3}
-  m_Name: fear item
+  m_Name: fear item 1
   m_EditorClassIdentifier: 
   weight: 5
   debug_color: {r: 1, g: 0.047468763, b: 0, a: 1}
   seek_color: {r: 0.32706264, g: 1, b: 0.015686274, a: 1}
-  item: {fileID: 11400000, guid: dbb3839ee44c8c54a97b2b7f8ab8fab8, type: 2}
+  item: {fileID: 11400000, guid: 9d9e21823c1adf04bbeab590c85758f1, type: 2}
   layers:
   - serializedVersion: 2
     m_Bits: 2048
   radar_size: {x: 5, y: 5, z: 5}
   radar_rotation: {x: 0, y: 0, z: 0, w: 0}
-  frequency: 0.3
+  frequency: 0.52

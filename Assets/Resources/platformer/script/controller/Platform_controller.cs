@@ -58,13 +58,15 @@ namespace platformer.controller.platform
 			return motor;
 		}
 
-		public void seek( Transform target )
+		public void seek( Transform target, chibi.controller.steering.behavior.Behavior fear )
 		{
 			var seek = chibi.controller.steering.behavior.Arrive.CreateInstance<
 				chibi.controller.steering.behavior.Arrive>();
 			steering.target = target;
 			steering.behaviors.Clear();
 			steering.behaviors.Add( seek );
+			if ( fear )
+				steering.behaviors.Add( fear );
 			steering.reload();
 		}
 	}
