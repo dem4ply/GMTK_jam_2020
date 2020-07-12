@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7016659876053825242, guid: 20bdc944fcb4b034da58d59c2ecdd7a9,
+  m_Sprite: {fileID: -7016659876053825242, guid: c3850aabcc6cc4aa086b97bcf77eda17,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -282,8 +282,8 @@ MonoBehaviour:
   act: 0
   manager: {fileID: 0}
   sprite: {fileID: 1015210744374136916}
-  fire: {fileID: -2174917370415693038, guid: 20bdc944fcb4b034da58d59c2ecdd7a9, type: 3}
-  no_fire: {fileID: -7016659876053825242, guid: 20bdc944fcb4b034da58d59c2ecdd7a9,
+  fire: {fileID: -2174917370415693038, guid: c3850aabcc6cc4aa086b97bcf77eda17, type: 3}
+  no_fire: {fileID: -7016659876053825242, guid: c3850aabcc6cc4aa086b97bcf77eda17,
     type: 3}
 --- !u!65 &3948972886974153822
 BoxCollider:
