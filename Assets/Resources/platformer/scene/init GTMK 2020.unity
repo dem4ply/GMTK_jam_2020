@@ -169,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &46834238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +432,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 177475305}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1778899470}
+        m_MethodName: retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &177475305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &249615100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +2007,7 @@ GameObject:
   - component: {fileID: 1134008250}
   - component: {fileID: 1134008249}
   - component: {fileID: 1134008248}
+  - component: {fileID: 1134008252}
   m_Layer: 5
   m_Name: Intro Canvas
   m_TagString: Untagged
@@ -2086,6 +2098,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1134008252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134008247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd7ae1e1efb55944b4c674749e7da4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug_mode: 0
+  pool: {fileID: 0}
+  is_block: 0
+  player: {fileID: 1970245091893131123}
+  pomo:
+    frecuency: 1
+    is_enable: 1
+    _sigma_frecuency: 0
+  tuto: {fileID: 249615099}
+  score: {fileID: 1401377142}
 --- !u!1 &1180692241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1401377143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2432,7 +2466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.5, y: -11.200012}
+  m_AnchoredPosition: {x: 21.5, y: -11.200073}
   m_SizeDelta: {x: 1476.0498, y: 1022.79443}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493929020
@@ -2624,7 +2658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1557441998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3174,10 +3208,11 @@ MonoBehaviour:
   horizontal_offset_random: 8
   helper_1: {fileID: 0}
   helper_2: {fileID: 0}
-  tuto_canvas: {fileID: 654883530}
-  lose_screen: {fileID: 93829562}
+  tuto_canvas: {fileID: 249615099}
+  lose_screen: {fileID: 1557441997}
   _score: 0
-  score: {fileID: 257281202}
+  score: {fileID: 1834547294}
+  dead_score: {fileID: 1180692243}
   current_platform: 0
 --- !u!1 &1819469652
 GameObject:
@@ -3595,7 +3630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.5, y: -11.200012}
+  m_AnchoredPosition: {x: 21.5, y: -11.200073}
   m_SizeDelta: {x: 1476.0498, y: 1022.79443}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1903882340
@@ -3669,7 +3704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.00030517578, y: 68.78}
+  m_AnchoredPosition: {x: 0.00024414062, y: 68.78003}
   m_SizeDelta: {x: -0.00061035156, y: 138.53998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992773305
