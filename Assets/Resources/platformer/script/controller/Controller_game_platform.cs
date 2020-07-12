@@ -87,6 +87,8 @@ namespace platformer.controller.player
 				case 0:
 					target_platform_1.act = false;
 					target_platform_2.act = true;
+					target_platform_2.sprite.sprite = target_platform_2.no_fire;
+					target_platform_1.sprite.sprite = target_platform_1.no_fire;
 					helper_2.position = new_position();
 					helper_1.position = target_platform_1.transform.position;
 					current_platform = 1;
@@ -94,6 +96,8 @@ namespace platformer.controller.player
 				case 1:
 					target_platform_1.act = true;
 					target_platform_2.act = false;
+					target_platform_2.sprite.sprite = target_platform_2.no_fire;
+					target_platform_1.sprite.sprite = target_platform_1.no_fire;
 					helper_1.position = new_position();
 					helper_2.position = target_platform_2.transform.position;
 					current_platform = 0;

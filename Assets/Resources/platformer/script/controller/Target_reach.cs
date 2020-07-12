@@ -11,13 +11,16 @@ namespace platformer.controller.player
 		public bool act = false;
 		public Controller_game_platform manager;
 
+		public SpriteRenderer sprite;
+
+		public Sprite fire, no_fire;
+
 		protected override void _init_cache()
 		{
 			base._init_cache();
 			if ( !player )
 				debug.error( "no esta asignado el player" );
 		}
-
 
 		private void OnTriggerEnter( Collider other )
 		{
@@ -27,6 +30,18 @@ namespace platformer.controller.player
 				if ( act )
 				{
 					manager.create_ranfom_platforms();
+				}
+			}
+		}
+
+		private void OnTriggerExit( Collider other )
+		{
+			var controller = other.GetComponent< Controller_npc >();
+			if ( controller == player )
+			{
+				if ( !act )
+				{
+					sprite.sprite = fire;
 				}
 			}
 		}
